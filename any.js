@@ -64,13 +64,13 @@ module.exports = function (codex) {
     },
     encodingLength: function (value, buffer, start, end) {
       var codec = map[value[type_field.name]]
-      if(!codec) throw new Error('unkown codec. tag='+ value[type_field.name])
+      if(!codec) throw new Error('unknown codec. tag='+ value[type_field.name])
      return codec.encodingLength(value, buffer, start, end)
     },
     encodedLength: function (buffer, start, end) {
       var tvalue = decodeType(buffer, start, end)
       var codec = map[tvalue]
-      if(!codec) throw new Error('unkown codec. tag='+ tvalue)
+      if(!codec) throw new Error('unknown codec. tag='+ tvalue)
       return codec.encodedLength(buffer, start, end)
     },
   }
